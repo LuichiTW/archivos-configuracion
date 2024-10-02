@@ -1,0 +1,29 @@
+[env]
+    TERM="xterm-256color"
+
+
+[window]
+    decorations = "Full"
+    opacity = 0.85
+    dynamic_title = true
+    decorations_theme_variant = "None"
+    class = { instance="Alacritty", general="Alacritty" }
+
+[font]
+    normal = { family="HackNerdFont", style="Regular" }
+    bold = { family="HackNerdFont", style="Bold" }
+
+
+
+
+[colors]
+    draw_bold_text_with_bright_colors=true
+    primary = {foreground="#ffffff", background="#000000", bright_foreground="#e63048"}
+    cursor = {text="#333333", cursor="#ffffff"} 
+
+[selection]
+    save_to_clipboard=true
+
+[cursor]
+    style={shape="Block", blinking="Always"}
+    blink_interval=450

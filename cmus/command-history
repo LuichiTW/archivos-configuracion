@@ -1,0 +1,30 @@
+q
+Q
+set resume=true
+set confirm_run=false
+rand
+run "rand"
+run rand
+run
+reload
+r
+set shuffle=off
+set start_view=sorted
+set shuffle=on
+bind -f common [ vol +1% +0
+bind common <key> rand
+quit
+player-pause
+player_stop
+stop
+1
+add Música/
+refresh
+referes
+clear
+help
+add Música/pop/
+add Música/japones/
+add Música/imagine dragons/
+add Música/español/
+colorscheme dracula
