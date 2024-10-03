@@ -204,8 +204,12 @@ gaps inner 5px
 
 # Configure an additional 5px of extra space to the screen edges,
 # for a total gap of 10px to the screen edges, and 5px between windows.
-gaps outer 5px
-gaps top 0px
+#gaps outer 3px
+#gaps top 0px
+gaps bottom 3px
+gaps left 3px
+gaps right 3px
+
 
 # Only enable outer gaps when there is exactly one window or split container on the workspace.
 smart_gaps off
