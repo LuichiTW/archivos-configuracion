@@ -560,7 +560,7 @@ require 'synthwave84'.setup({
   }
 })
 
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd[[colorscheme darkplus]]
 
 
 function delete_file_swaps()
