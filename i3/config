@@ -11,6 +11,8 @@
 
 set $mod Mod4
 exec --no-startup-id picom
+exec --no-startup-id xset s off 
+exec --no-startup-id xset -dpms 
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always feh -z --bg-scale ~/Imágenes/wallpaper/
@@ -48,6 +50,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Sreen brightness controls
+bindsym $mod+Up exec --no-startup-id brightnessctl -d "intel_backlight" set +8% && $refresh_i3status
+bindsym $mod+Down exec --no-startup-id brightnessctl -d "intel_backlight" set 8%- && $refresh_i3status
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -76,10 +83,10 @@ bindsym $mod+l focus up
 bindsym $mod+ntilde focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
