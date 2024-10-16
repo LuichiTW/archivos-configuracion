@@ -10,17 +10,27 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+
+#compositor
 exec --no-startup-id picom
+
+#modo oscuro para aplicaciones
+exec --no-startup-id /usr/libexec/csd-xsettings
+
+#apagar la suspencion de pantalla
 exec --no-startup-id xset s off 
 exec --no-startup-id xset -dpms 
+
+#iniciar polybar
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+
+#iniciar feh
 exec_always feh -z --bg-scale ~/archivos-configuracion/wallpaper/
 #exec_always feh -z -r --bg-scale --slideshow-delay 10.5 ~/Imágenes/wallpaper/
 
-#1268195.png
-# Font for window titles. Will also be used by the bar unless a different font
 
+# Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Hack Nerd Font 10
 
