@@ -14,6 +14,9 @@ set $mod Mod4
 #compositor
 exec --no-startup-id picom
 
+#notificaciones
+exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
+
 #modo oscuro para aplicaciones
 exec --no-startup-id /usr/libexec/csd-xsettings
 

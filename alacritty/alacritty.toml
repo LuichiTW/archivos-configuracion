@@ -10,6 +10,7 @@
     class = { instance="Alacritty", general="Alacritty" }
 
 [font]
+    size = 12.75
     normal = { family="HackNerdFont", style="Regular" }
     bold = { family="HackNerdFont", style="Bold" }
 
