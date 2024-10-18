@@ -71,9 +71,9 @@ bindsym $mod+Down exec --no-startup-id brightnessctl -d "intel_backlight" set 8%
 bindsym $mod+Shift+p exec --no-startup-id feh -z --bg-scale ~/archivos-configuracion/wallpaper/
 
 # Tomar capturas de pantalla
-bindsym $mod+z exec --no-startup-id maim ~/Imágenes/screenshots/$(date +%s).png
-bindsym $mod+x exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Imágenes/screenshots/$(date +%s).png
-bindsym $mod+c exec --no-startup-id maim -s -D ~/Imágenes/screenshots/$(date +%s).png
+bindsym $mod+z exec --no-startup-id maim ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
+bindsym $mod+x exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
+bindsym $mod+c exec --no-startup-id maim -s -D ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
