@@ -15,7 +15,7 @@ set $mod Mod4
 exec --no-startup-id picom
 
 #notificaciones
-exec --no-startup-id dunst -conf ~/.config/dunst/dunstrc
+exec --no-startup-id killall dunst && dunst -conf ~/archivos-configuracion/dunst/dunstrc
 
 #modo oscuro para aplicaciones
 exec --no-startup-id /usr/libexec/csd-xsettings
@@ -58,17 +58,17 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && dunstify --replace=11111 --icon=~/.icons/candy-icons/status/scalable/audio-on.svg --hints=int:value:"$(pactl list sinks | grep "Volumen: " | awk '{print $5}' | sed 's/%//')%" "Control de sonido" "" 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && dunstify --replace=11111 --icon=~/.icons/candy-icons/status/scalable/audio-on.svg --hints=int:value:"$(pactl list sinks | grep "Volumen: " | awk '{print $5}' | sed 's/%//')%" "Control de sonido" "" 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && dunstify --replace=11111 --icon=~/.icons/candy-icons/status/scalable/audio-off.svg --hints=int:value:"$(pactl list sinks | grep "Volumen: " | awk '{print $5}' | sed 's/%//')%" "Control de sonido" ""  
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Sreen brightness controls
-bindsym $mod+Up exec --no-startup-id brightnessctl -d "intel_backlight" set +8% && $refresh_i3status
-bindsym $mod+Down exec --no-startup-id brightnessctl -d "intel_backlight" set 8%- && $refresh_i3status
+bindsym $mod+Up exec --no-startup-id brightnessctl -d "intel_backlight" set +8% && dunstify --replace=11111 --icon=~/.icons/candy-icons/preferences/scalable/preferences-desktop-display-randr.svg --hints=int:value:"$(($(brightnessctl -m get) * 100 /  21333))%" "Brillo de pantalla" "" 
+bindsym $mod+Down exec --no-startup-id brightnessctl -d "intel_backlight" set 8%- && dunstify --replace=11111 --icon=~/.icons/candy-icons/preferences/scalable/preferences-desktop-display-randr.svg --hints=int:value:"$(($(brightnessctl -m get) * 100 /  21333))%" "Brillo de pantalla" ""  
 
 # cambiar wallpaper
-bindsym $mod+Shift+p exec --no-startup-id feh -z --bg-scale ~/archivos-configuracion/wallpaper/
+bindsym $mod+Shift+p exec --no-startup-id feh -z --bg-scale ~/archivos-configuracion/wallpaper/ && dunstify --icon=~/.icons/candy-icons/preferences/scalable/background.svg "Cambio de fondo de pantalla" ""
 
 # Tomar capturas de pantalla
 bindsym $mod+z exec --no-startup-id maim ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
