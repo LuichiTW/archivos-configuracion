@@ -32,6 +32,8 @@ exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 exec_always feh -z --bg-scale ~/archivos-configuracion/wallpaper/
 #exec_always feh -z -r --bg-scale --slideshow-delay 10.5 ~/Imágenes/wallpaper/
 
+#gestor de ventanas 
+exec_always --no-startup-id autotiling
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -74,6 +76,10 @@ bindsym $mod+Shift+p exec --no-startup-id feh -z --bg-scale ~/archivos-configura
 bindsym $mod+z exec --no-startup-id maim ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
 bindsym $mod+x exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
 bindsym $mod+c exec --no-startup-id maim -s -D ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
+
+#Redireccion de audio para llamada de discord
+bindsym $mod+Shift+m exec --no-startup-id ~/archivos-configuracion/script-desactivar-audio-discord.sh && dunstify "Audio discord"
+bindsym $mod+Shift+n exec --no-startup-id ~/archivos-configuracion/script-audio-discord.sh && dunstify "Desactivar audio discord"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
