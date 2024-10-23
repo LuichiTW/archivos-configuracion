@@ -73,13 +73,13 @@ bindsym $mod+Down exec --no-startup-id brightnessctl -d "intel_backlight" set 8%
 bindsym $mod+Shift+p exec --no-startup-id feh -z --bg-scale ~/archivos-configuracion/wallpaper/ && dunstify --icon=~/.icons/candy-icons/preferences/scalable/background.svg "Cambio de fondo de pantalla" ""
 
 # Tomar capturas de pantalla
-bindsym $mod+z exec --no-startup-id maim ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
-bindsym $mod+x exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
-bindsym $mod+c exec --no-startup-id maim -s -D ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(date +%s).png Captura_de_pantalla
+bindsym $mod+z exec --no-startup-id maim ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(ls -rt ~/Imágenes/screenshots/ | tail -1) Captura_de_pantalla
+bindsym $mod+x exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(ls -rt ~/Imágenes/screenshots/ | tail -1) Captura_de_pantalla
+bindsym $mod+c exec --no-startup-id maim -s -D ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(ls -rt ~/Imágenes/screenshots/ | tail -1) Captura_de_pantalla
 
 #Redireccion de audio para llamada de discord
-bindsym $mod+Shift+m exec --no-startup-id ~/archivos-configuracion/script-desactivar-audio-discord.sh && dunstify "Audio discord"
-bindsym $mod+Shift+n exec --no-startup-id ~/archivos-configuracion/script-audio-discord.sh && dunstify "Desactivar audio discord"
+bindsym $mod+Shift+m exec --no-startup-id ~/archivos-configuracion/script-audio-discord.sh && dunstify "Audio discord"
+bindsym $mod+Shift+n exec --no-startup-id ~/archivos-configuracion/script-desactivar-audio-discord.sh && dunstify "Desactivar audio discord"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -243,6 +243,7 @@ gaps bottom 3px
 gaps left 3px
 gaps right 3px
 
+default_border pixel 4
 
 # Only enable outer gaps when there is exactly one window or split container on the workspace.
 smart_gaps off
