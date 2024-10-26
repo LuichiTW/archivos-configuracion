@@ -132,6 +132,8 @@ alias aguanteBoca='sh /home/luichi/Documentos/scripts_personalizados/condoritoAS
 
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH=$PATH:~/.cargo/bin/
+export PATH=$HOME/.config/rofi/scripts:$PATH
+export PATH=$HOME/Documentos/gitRepos/LibreSprite/build/bin:$PATH
 
 
 # comando de inicio de bash
