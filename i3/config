@@ -78,8 +78,8 @@ bindsym $mod+x exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Imágen
 bindsym $mod+c exec --no-startup-id maim -s -D ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(ls -rt ~/Imágenes/screenshots/ | tail -1) Captura_de_pantalla
 
 #Redireccion de audio para llamada de discord
-bindsym $mod+Shift+m exec --no-startup-id ~/archivos-configuracion/script-audio-discord.sh && dunstify "Audio discord"
-bindsym $mod+Shift+n exec --no-startup-id ~/archivos-configuracion/script-desactivar-audio-discord.sh && dunstify "Desactivar audio discord"
+bindsym $mod+Shift+m exec --no-startup-id ~/archivos-configuracion/scripts_personales/script-audio-discord.sh && dunstify "Audio discord"
+bindsym $mod+Shift+n exec --no-startup-id ~/archivos-configuracion/scripts_personales/script-desactivar-audio-discord.sh && dunstify "Desactivar audio discord"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

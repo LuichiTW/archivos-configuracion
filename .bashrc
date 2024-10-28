@@ -123,10 +123,6 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # comando personalizado
-alias hola='echo "hola mundo"'
-
-alias music='sh /home/luichi/Documentos/scripts_personalizados/scrip_musica/cmus+vis_terminal.sh'
-
 alias aguanteBoca='sh /home/luichi/Documentos/scripts_personalizados/condoritoASCII/terminalBoca.sh'
 
 
