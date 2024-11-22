@@ -73,7 +73,7 @@ bindsym $mod+Up exec --no-startup-id brightnessctl -d "intel_backlight" set +8% 
 bindsym $mod+Down exec --no-startup-id brightnessctl -d "intel_backlight" set 8%- && dunstify --replace=11111 --icon=~/.icons/candy-icons/preferences/scalable/preferences-desktop-display-randr.svg --hints=int:value:"$(($(brightnessctl -m get) * 100 /  21333))%" "Brillo de pantalla" ""  
 
 # cambiar wallpaper
-bindsym $mod+Shift+p exec --no-startup-id feh -z --bg-scale ~/archivos-configuracion/wallpaper/ && dunstify --icon=~/.icons/candy-icons/preferences/scalable/background.svg "Cambio de fondo de pantalla" ""
+bindsym $mod+Shift+p exec --no-startup-id wallpaper=$(find ~/archivos-configuracion/wallpaper/ -type f | shuf -n1) && feh -z --bg-scale "$wallpaper" && dunstify --icon="$wallpaper" "Cambio de fondo de pantalla" ""
 
 # Tomar capturas de pantalla
 bindsym $mod+z exec --no-startup-id maim ~/Imágenes/screenshots/$(date +%s).png && dunstify --icon=~/Imágenes/screenshots/$(ls -rt ~/Imágenes/screenshots/ | tail -1) Captura_de_pantalla
